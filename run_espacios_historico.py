@@ -44,10 +44,6 @@ data_sql = cur_sql.fetchall ()
 for (CLIENTE,TIPO_DB,SID,DESCRIPCION,TABLESPACE,OCUPADO_KBYTES,LIBRE_KBYTES,MAX_CRECI_ULTIMOS_DIAS,FECHA) in data_sql:
         list_tablespace_readys.append(CLIENTE+"|"+TIPO_DB+"|"+SID+"|"+DESCRIPCION+"|"+TABLESPACE+"|"+str(OCUPADO_KBYTES)+"|"+str(LIBRE_KBYTES)+"|"+str(MAX_CRECI_ULTIMOS_DIAS)+"|"+str(FECHA))
 
-
-text = 'some string... this part will be removed.'
-head, sep, tail = text.partition('...')
-
 for k in list_tablespace_readys:
         data=k.split("|")
         fecha_sort,nofunk,nofunk1 = data[8].partition(' ')
